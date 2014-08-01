@@ -1,0 +1,60 @@
+<patTemplate:tmpl name="pageoutput" unusedvars="strip">
+	<div id="property_details">
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-7 col-lg-7 alert alert-success">
+				<h4>
+					{PRICE_PRE_TEXT}
+					{PRICE_PRICE}
+					{PRICE_POST_TEXT}
+				</h4>
+			</div>
+			<div class="span5">
+			</div>
+		</div>
+		<div class="row">
+			<div id="gallerywrapper" class="col-xs-12 col-sm-12 col-md-7 col-lg-7 well">{SLIDESHOW}</div>
+			<div class="col-xs-12 col-sm-12 col-md-5 col-lg-5" id="tour_target_property_details_buttons">
+				<div class="big-price">{REAL_ESTATE_PROPERTY_PRICE}</div>
+				<div class="btn-group-vertical">
+					<patTemplate:tmpl name="bookinglink" type="simpleCondition" requiredVars="link" unusedvars="nbsp">
+						<a href="{LINK}" class="btn btn-primary property_details_buttons btn-lg"><span class="glyphicon glyphicon-calendar pull-left"></span> {TEXT}</a>
+					</patTemplate:tmpl>
+					<patTemplate:tmpl name="contactuslink" type="simpleCondition" requiredVars="link" unusedvars="nbsp">
+						<a href="{LINK}" class="btn btn-primary property_details_buttons btn-lg"><span class="glyphicon glyphicon-envelope pull-left"></span> {TEXT}</a>
+					</patTemplate:tmpl>
+					<patTemplate:tmpl name="slideshowlink" type="simpleCondition" requiredVars="link" unusedvars="nbsp">
+						<a href="{LINK}" class="btn btn-default property_details_buttons"><span class="glyphicon glyphicon-picture pull-left"></span> {TEXT}</a>
+					</patTemplate:tmpl>
+					<patTemplate:tmpl name="tariffslink" type="simpleCondition" requiredVars="link" unusedvars="nbsp">
+						<a href="{LINK}" class="btn btn-default property_details_buttons"><span class="glyphicon glyphicon-usd pull-left"></span> {TEXT}</a>
+					</patTemplate:tmpl>
+					<patTemplate:tmpl name="roomslistlink" type="simpleCondition" requiredVars="link" unusedvars="nbsp">
+						<a href="{LINK}" class="btn btn-default property_details_buttons"><span class="glyphicon glyphicon-list pull-left"></span> {TEXT}</a>
+					</patTemplate:tmpl>
+					<a href="{PRINT_LINK}" target="_blank" class="btn btn-default property_details_buttons"><span class="glyphicon glyphicon-print pull-left"></span> {COMMON_PRINT}</a>
+				</div>
+				<div style="clear:both;"></div>
+				<div id="tour_target_inline_calendar">{INLINE_CALENDAR}</div>
+			</div>
+		</div>
+	</div>
+	<div class="clearfix"></div>
+	<p>&nbsp;</p>
+
+	<div class="tabbable">
+		<ul class="nav nav-tabs">
+			<patTemplate:tmpl name="tabs_titles">
+				<li class="{ACTIVE}"><a href="#{TAB_ANCHOR}" data-toggle="tab" id="{TAB_ID}">{TAB_TITLE}</a></li>
+			</patTemplate:tmpl>
+		</ul>
+		<div class="tab-content">
+			<patTemplate:tmpl name="tabs_content">
+				<div class="tab-pane {ACTIVE}" id="{TAB_ANCHOR}">
+					{TAB_CONTENT}
+				</div>
+			</patTemplate:tmpl>
+		</div>
+	</div>
+	<div class="clearfix"></div>
+	<p>&nbsp;</p>
+</patTemplate:tmpl>

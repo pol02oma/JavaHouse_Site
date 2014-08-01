@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  <install type="module" version="1.5.0" method="upgrade">  -->
+<extension type="module" version="2.5.0" method="upgrade">
+    <name>Optimized Tweets</name>
+	<author>Optimized Sense</author>
+    <creationDate>July, 2011</creationDate>
+	<copyright>(C) 2011 Optimized Sense. This module is released under GNU/GPL license</copyright>
+	<license>http://www.gnu.org/licenses/gpl.html</license>
+    <authoremail>support@o-sense.com</authoremail>
+    <authorurl>http://www.o-sense.com</authorurl>
+	<version>3.2.1</version>
+    <description>This module will allow you to show the Twitter latest tweets for your account, very simple, very easy, yet effective.<br/> For more information, examples and other modules, please visit Optimized Sense (http://www.o-sense.com).
+	</description>
+    <files folder="content">
+		<folder>tmpl</folder>
+		<folder>jscolor</folder>
+		<folder>cp</folder>
+		<filename>helper.php</filename>
+        <filename>index.html</filename>
+        <filename module="mod_otweets">mod_otweets.php</filename>
+    </files>
+    <params addpath="/modules/mod_otweets/cp/">
+		<param name="moduleclass_sfx" type="text" default="" label="Module Class Suffix" description="Module Class Suffix" />
+
+		<param type="spacer" default="" />
+		
+        <param name="ousername" type="text" default="" label="Twitter Username" description="Enter the Twitter Username that you want to show the tweets for ( example:  OptimizedSense)... note: this module is unavailable for private accounts" />		  
+		<param name="oid" type="text" default="" label="Twitter Widget ID" description="Enter the Twitter Widget ID that you want to show the tweets for ( example:  344829614071373824)... You can create your widget from within your twitter page, on left side, choose widget and create a new one with your settings, then get its ID from the code." />	
+
+		<param type="spacer" default="" />
+		<param name="onoheader" type="list" default="1" label="Show Header" description="Choose either to show the Header or not">
+            <option value="1">Yes</option>
+            <option value="2">No</option>
+        </param>
+		<param name="onofooter" type="list" default="1" label="Show Footer" description="Choose either to show the Footer or not">
+            <option value="1">Yes</option>
+            <option value="2">No</option>
+        </param>
+		<param name="onoborders" type="list" default="1" label="Show Borders" description="Choose either to show all the borders within the widget (between Tweets, cards, around the widget.) or not">
+            <option value="1">Yes</option>
+            <option value="2">No</option>
+        </param>
+		<param name="onoscrollbar" type="list" default="1" label="Show Scroll Bar" description="Choose either to show the main timeline scrollbar, if visible. Please consider that hiding standard user interface components can affect the accessibility of your website.">
+            <option value="1">Yes</option>
+            <option value="2">No</option>
+        </param>
+		<param name="otransparent" type="list" default="2" label="Transparent Background" description="Removes the background color.">
+            <option value="1">Yes</option>
+            <option value="2">No</option>
+        </param>
+		<param name="olinks" type="colortext" class="picker_text" onchange="this.style.background=this.value;" default="4aed05" label="Links Color" description="Enter the color code for the links" />
+		<param name="oborder" type="colortext" class="picker_text" onchange="this.style.background=this.value;" default="333333" label="Borders Color" description="Enter the color code for the borders" />		
+		<param name="otheme" type="list" default="1" label="Widget Theme" description="Choose the widget's theme">
+            <option value="1">Light</option>
+            <option value="2">Dark</option>
+        </param>  
+		
+		<param type="spacer" default="" />
+		<param name="owidth" type="text" default="250" label="Widget Width" description="Put the width of the widget that you want in pixels. The minimum width of a timeline is 180px and the maximum is 520px." />
+		<param name="oheight" type="text" default="300" label="Widget Height" description="Put the height of the widget that you want in pixels. The minimum height is 200px." />
+		
+		<param type="spacer" default="" />
+		<param name="ocount" type="list" default="3" label="Number of Tweets" description="Choose the number of tweets that you want to show">
+			<option value="0">LIVE (Auto Pull)</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+			<option value="6">6</option>
+			<option value="7">7</option>
+			<option value="8">8</option>
+			<option value="9">9</option>
+			<option value="10">10</option>
+			<option value="11">11</option>
+			<option value="12">12</option>
+			<option value="13">13</option>
+			<option value="14">14</option>
+			<option value="15">15</option>
+			<option value="16">16</option>
+			<option value="17">17</option>
+			<option value="18">18</option>
+			<option value="19">19</option>
+			<option value="20">20</option>			
+        </param>  
+		
+		<param name="olang" type="list" default="EN" label="Widget Language" description="Choose the language that you want to show in Optimized Tweets">			
+			<option value="af_ZA">af_ZA</option>
+            <option value="ar_AR">ar_AR</option>
+            <option value="ay_BO">ay_BO</option>
+            <option value="az_AZ">az_AZ</option>
+            <option value="be_BY">be_BY</option>
+            <option value="bg_BG">bg_BG</option>
+            <option value="bn_IN">bn_IN</option>
+            <option value="bs_BA">bs_BA</option>
+            <option value="ca_ES">ca_ES</option>
+            <option value="ck_US">ck_US</option>
+            <option value="cs_CZ">cs_CZ</option>
+            <option value="cy_GB">cy_GB</option>
+            <option value="da_DK">da_DK</option>
+            <option value="de_DE">de_DE</option>
+            <option value="el_GR">el_GR</option>
+            <option value="en_GB">en_GB</option>
+            <option value="en_PI">en_PI</option>
+            <option value="en_UD">en_UD</option>
+            <option value="en_US">en_US</option>
+            <option value="eo_EO">eo_EO</option>
+            <option value="es_CL">es_CL</option>
+            <option value="es_CO">es_CO</option>
+            <option value="es_ES">es_ES</option>
+            <option value="es_LA">es_LA</option>
+            <option value="es_MX">es_MX</option>
+            <option value="es_VE">es_VE</option>
+            <option value="et_EE">et_EE</option>
+            <option value="eu_ES">eu_ES</option>
+            <option value="fa_IR">fa_IR</option>
+            <option value="fb_LT">fb_LT</option>
+            <option value="fi_FI">fi_FI</option>
+            <option value="fo_FO">fo_FO</option>
+            <option value="fr_CA">fr_CA</option>
+            <option value="fr_FR">fr_FR</option>
+            <option value="ga_IE">ga_IE</option>
+            <option value="gl_ES">gl_ES</option>
+            <option value="gn_PY">gn_PY</option>
+            <option value="gu_IN">gu_IN</option>
+            <option value="he_IL">he_IL</option>
+            <option value="hi_IN">hi_IN</option>
+            <option value="hr_HR">hr_HR</option>
+            <option value="hu_HU">hu_HU</option>
+            <option value="hy_AM">hy_AM</option>
+            <option value="id_ID">id_ID</option>
+            <option value="is_IS">is_IS</option>
+            <option value="it_IT">it_IT</option>
+            <option value="ja_JP">ja_JP</option>
+            <option value="jv_ID">jv_ID</option>
+            <option value="ka_GE">ka_GE</option>
+            <option value="kk_KZ">kk_KZ</option>
+            <option value="km_KH">km_KH</option>
+            <option value="kn_IN">kn_IN</option>
+            <option value="ko_KR">ko_KR</option>
+            <option value="ku_TR">ku_TR</option>
+            <option value="la_VA">la_VA</option>
+            <option value="li_NL">li_NL</option>
+            <option value="lt_LT">lt_LT</option>
+            <option value="lv_LV">lv_LV</option>
+            <option value="mg_MG">mg_MG</option>
+            <option value="mk_MK">mk_MK</option>
+            <option value="ml_IN">ml_IN</option>
+            <option value="mn_MN">mn_MN</option>
+            <option value="mr_IN">mr_IN</option>
+            <option value="ms_MY">ms_MY</option>
+            <option value="mt_MT">mt_MT</option>
+            <option value="nb_NO">nb_NO</option>
+            <option value="ne_NP">ne_NP</option>
+            <option value="nl_BE">nl_BE</option>
+            <option value="nl_NL">nl_NL</option>
+            <option value="nn_NO">nn_NO</option>
+            <option value="pa_IN">pa_IN</option>
+            <option value="pl_PL">pl_PL</option>
+            <option value="ps_AF">ps_AF</option>
+            <option value="pt_BR">pt_BR</option>
+            <option value="pt_PT">pt_PT</option>
+            <option value="qu_PE">qu_PE</option>
+            <option value="qu_PE">qu_PE</option>
+            <option value="ro_RO">ro_RO</option>
+            <option value="ru_RU">ru_RU</option>
+            <option value="sa_IN">sa_IN</option>
+            <option value="se_NO">se_NO</option>
+            <option value="sk_SK">sk_SK</option>
+            <option value="sl_SI">sl_SI</option>
+            <option value="so_SO">so_SO</option>
+            <option value="sq_AL">sq_AL</option>
+            <option value="sr_RS">sr_RS</option>
+            <option value="sv_SE">sv_SE</option>
+            <option value="sw_KE">sw_KE</option>
+            <option value="sy_SY">sy_SY</option>
+            <option value="ta_IN">ta_IN</option>
+            <option value="te_IN">te_IN</option>
+            <option value="tg_TJ">tg_TJ</option>
+            <option value="th_TH">th_TH</option>
+            <option value="tl_PH">tl_PH</option>
+            <option value="tl_ST">tl_ST</option>
+            <option value="tr_TR">tr_TR</option>
+            <option value="tt_RU">tt_RU</option>
+            <option value="uk_UA">uk_UA</option>
+            <option value="ur_PK">ur_PK</option>
+            <option value="uz_UZ">uz_UZ</option>
+            <option value="vi_VN">vi_VN</option>
+            <option value="xh_ZA">xh_ZA</option>
+            <option value="yi_DE">yi_DE</option>
+            <option value="zh_CN">zh_CN</option>
+            <option value="zh_HK">zh_HK</option>
+            <option value="zh_TW">zh_TW</option>
+            <option value="zu_ZA">zu_ZA</option>
+        </param>  
+    </params>
+	
+	<params group="advanced">
+		<param name="cache" type="list" default="0" label="Caching" description="Module Caching">
+			<option value="0">No caching</option>
+			<option value="1">Use global</option>
+		</param>
+		<param name="cache_time" type="text" default="900" label="Cache Time" description="The time before the module is recached" />
+		<param name="oshowbacklink" type="list" default="1" label="Show Backlink" description="Show the back link that appear on the bottom of the module. Please leave it (Yes) if you like our module and you want to support it.">
+            <option value="1">Yes</option>
+            <option value="2">No</option>
+        </param>
+	</params>
+	
+	<!-- from here, the params for Joomla! 1.6 standards -->
+	<config>
+	<fields name="params" addfieldpath="/modules/mod_otweets/jscolor/">
+	<fieldset  name="oTweets" label="Module Parameters">
+		<field name="moduleclass_sfx" type="text" default="" label="Module Class Suffix" description="Module Class Suffix" />
+
+		<field type="spacer" default="" />
+        <field name="ousername" type="text" default="" label="Twitter Username" description="Enter the Twitter Username that you want to show the tweets for ( example:  OptimizedSense)... note: this module is unavailable for private accounts" />		  
+		<field name="oid" type="text" default="" label="Twitter Widget ID" description="Enter the Twitter Widget ID that you want to show the tweets for ( example:  344829614071373824)... You can create your widget from within your twitter page, on left side, choose widget and create a new one with your settings, then get its ID from the code." />	
+
+		<field type="spacer" default="" />
+		<field name="onoheader" type="list" default="1" label="Show Header" description="Choose either to show the Header or not">
+            <option value="1">Yes</option>
+            <option value="2">No</option>
+        </field>
+		<field name="onofooter" type="list" default="1" label="Show Footer" description="Choose either to show the Footer or not">
+            <option value="1">Yes</option>
+            <option value="2">No</option>
+        </field>
+		<field name="onoborders" type="list" default="1" label="Show Borders" description="Choose either to show all the borders within the widget (between Tweets, cards, around the widget.) or not">
+            <option value="1">Yes</option>
+            <option value="2">No</option>
+        </field>
+		<field name="onoscrollbar" type="list" default="1" label="Show Scroll Bar" description="Choose either to show the main timeline scrollbar, if visible. Please consider that hiding standard user interface components can affect the accessibility of your website.">
+            <option value="1">Yes</option>
+            <option value="2">No</option>
+        </field>
+		<field name="otransparent" type="list" default="2" label="Transparent Background" description="Removes the background color.">
+            <option value="1">Yes</option>
+            <option value="2">No</option>
+        </field>
+		<field name="olinks" type="colortext" class="picker_text" onchange="this.style.background=this.value;" default="4aed05" label="Links Color" description="Enter the color code for the links" />
+		<field name="oborder" type="colortext" class="picker_text" onchange="this.style.background=this.value;" default="333333" label="Borders Color" description="Enter the color code for the borders" />		
+		<field name="otheme" type="list" default="1" label="Widget Theme" description="Choose the widget's theme">
+            <option value="1">Light</option>
+            <option value="2">Dark</option>
+        </field>  
+		
+		<field type="spacer" default="" />
+		<field name="owidth" type="text" default="250" label="Widget Width" description="Put the width of the widget that you want in pixels. The minimum width of a timeline is 180px and the maximum is 520px. " />
+		<field name="oheight" type="text" default="300" label="Widget Height" description="Put the height of the widget that you want in pixels. The minimum height is 200px." />
+		
+		<field type="spacer" default="" />
+		<field name="ocount" type="list" default="3" label="Number of Tweets" description="Choose the number of tweets that you want to show">
+            <option value="0">LIVE (Auto Pull)</option>
+			<option value="1">1</option>
+            <option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+			<option value="6">6</option>
+			<option value="7">7</option>
+			<option value="8">8</option>
+			<option value="9">9</option>
+			<option value="10">10</option>
+			<option value="11">11</option>
+			<option value="12">12</option>
+			<option value="13">13</option>
+			<option value="14">14</option>
+			<option value="15">15</option>
+			<option value="16">16</option>
+			<option value="17">17</option>
+			<option value="18">18</option>
+			<option value="19">19</option>
+			<option value="20">20</option>			
+        </field>  
+		
+		<field name="olang" type="list" default="EN" label="Widget Language" description="Choose the language that you want to show in Optimized Tweets">			
+			<option value="af_ZA">af_ZA</option>
+            <option value="ar_AR">ar_AR</option>
+            <option value="ay_BO">ay_BO</option>
+            <option value="az_AZ">az_AZ</option>
+            <option value="be_BY">be_BY</option>
+            <option value="bg_BG">bg_BG</option>
+            <option value="bn_IN">bn_IN</option>
+            <option value="bs_BA">bs_BA</option>
+            <option value="ca_ES">ca_ES</option>
+            <option value="ck_US">ck_US</option>
+            <option value="cs_CZ">cs_CZ</option>
+            <option value="cy_GB">cy_GB</option>
+            <option value="da_DK">da_DK</option>
+            <option value="de_DE">de_DE</option>
+            <option value="el_GR">el_GR</option>
+            <option value="en_GB">en_GB</option>
+            <option value="en_PI">en_PI</option>
+            <option value="en_UD">en_UD</option>
+            <option value="en_US">en_US</option>
+            <option value="eo_EO">eo_EO</option>
+            <option value="es_CL">es_CL</option>
+            <option value="es_CO">es_CO</option>
+            <option value="es_ES">es_ES</option>
+            <option value="es_LA">es_LA</option>
+            <option value="es_MX">es_MX</option>
+            <option value="es_VE">es_VE</option>
+            <option value="et_EE">et_EE</option>
+            <option value="eu_ES">eu_ES</option>
+            <option value="fa_IR">fa_IR</option>
+            <option value="fb_LT">fb_LT</option>
+            <option value="fi_FI">fi_FI</option>
+            <option value="fo_FO">fo_FO</option>
+            <option value="fr_CA">fr_CA</option>
+            <option value="fr_FR">fr_FR</option>
+            <option value="ga_IE">ga_IE</option>
+            <option value="gl_ES">gl_ES</option>
+            <option value="gn_PY">gn_PY</option>
+            <option value="gu_IN">gu_IN</option>
+            <option value="he_IL">he_IL</option>
+            <option value="hi_IN">hi_IN</option>
+            <option value="hr_HR">hr_HR</option>
+            <option value="hu_HU">hu_HU</option>
+            <option value="hy_AM">hy_AM</option>
+            <option value="id_ID">id_ID</option>
+            <option value="is_IS">is_IS</option>
+            <option value="it_IT">it_IT</option>
+            <option value="ja_JP">ja_JP</option>
+            <option value="jv_ID">jv_ID</option>
+            <option value="ka_GE">ka_GE</option>
+            <option value="kk_KZ">kk_KZ</option>
+            <option value="km_KH">km_KH</option>
+            <option value="kn_IN">kn_IN</option>
+            <option value="ko_KR">ko_KR</option>
+            <option value="ku_TR">ku_TR</option>
+            <option value="la_VA">la_VA</option>
+            <option value="li_NL">li_NL</option>
+            <option value="lt_LT">lt_LT</option>
+            <option value="lv_LV">lv_LV</option>
+            <option value="mg_MG">mg_MG</option>
+            <option value="mk_MK">mk_MK</option>
+            <option value="ml_IN">ml_IN</option>
+            <option value="mn_MN">mn_MN</option>
+            <option value="mr_IN">mr_IN</option>
+            <option value="ms_MY">ms_MY</option>
+            <option value="mt_MT">mt_MT</option>
+            <option value="nb_NO">nb_NO</option>
+            <option value="ne_NP">ne_NP</option>
+            <option value="nl_BE">nl_BE</option>
+            <option value="nl_NL">nl_NL</option>
+            <option value="nn_NO">nn_NO</option>
+            <option value="pa_IN">pa_IN</option>
+            <option value="pl_PL">pl_PL</option>
+            <option value="ps_AF">ps_AF</option>
+            <option value="pt_BR">pt_BR</option>
+            <option value="pt_PT">pt_PT</option>
+            <option value="qu_PE">qu_PE</option>
+            <option value="qu_PE">qu_PE</option>
+            <option value="ro_RO">ro_RO</option>
+            <option value="ru_RU">ru_RU</option>
+            <option value="sa_IN">sa_IN</option>
+            <option value="se_NO">se_NO</option>
+            <option value="sk_SK">sk_SK</option>
+            <option value="sl_SI">sl_SI</option>
+            <option value="so_SO">so_SO</option>
+            <option value="sq_AL">sq_AL</option>
+            <option value="sr_RS">sr_RS</option>
+            <option value="sv_SE">sv_SE</option>
+            <option value="sw_KE">sw_KE</option>
+            <option value="sy_SY">sy_SY</option>
+            <option value="ta_IN">ta_IN</option>
+            <option value="te_IN">te_IN</option>
+            <option value="tg_TJ">tg_TJ</option>
+            <option value="th_TH">th_TH</option>
+            <option value="tl_PH">tl_PH</option>
+            <option value="tl_ST">tl_ST</option>
+            <option value="tr_TR">tr_TR</option>
+            <option value="tt_RU">tt_RU</option>
+            <option value="uk_UA">uk_UA</option>
+            <option value="ur_PK">ur_PK</option>
+            <option value="uz_UZ">uz_UZ</option>
+            <option value="vi_VN">vi_VN</option>
+            <option value="xh_ZA">xh_ZA</option>
+            <option value="yi_DE">yi_DE</option>
+            <option value="zh_CN">zh_CN</option>
+            <option value="zh_HK">zh_HK</option>
+            <option value="zh_TW">zh_TW</option>
+            <option value="zu_ZA">zu_ZA</option>
+        </field>
+    </fieldset>
+	
+	<fieldset name="cache" label="Advanced Parameters">
+            <field
+               name="cache"
+               type="list"
+               default="1"
+               label="COM_MODULES_FIELD_CACHING_LABEL"
+               description="COM_MODULES_FIELD_CACHING_DESC">
+               <option
+                  value="1">JGLOBAL_USE_GLOBAL</option>
+               <option
+                  value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+            </field>
+            <field
+               name="cache_time"
+               type="text"
+               default="900"
+               label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+               description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+            <field
+               name="cachemode"
+               type="hidden"
+               default="static">
+               <option
+                  value="static"></option>
+                </field>			
+			<field name="oshowbacklink" type="list" default="1" label="Show Backlink" description="Show the back link that appear on the bottom of the module. Please leave it (Yes) if you like our module and you want to support it.">
+            <option value="1">Yes</option>
+            <option value="2">No</option>
+		        </field>
+         </fieldset>
+    </fields>
+     </config>
+	<!-- End Joomla! 1.6 params -->
+</extension>
+<!--  </install>  -->

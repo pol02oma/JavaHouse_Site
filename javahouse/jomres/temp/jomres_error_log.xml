@@ -1,0 +1,9 @@
+<errorlog>
+	<errorlogentry>
+		<datetime>2014-07-26 01:04:29 (EDT)</datetime>
+		<jomressession></jomressession>
+		<task></task>
+		<requesturi><![CDATA[ 41.204.186.227 41.204.186.227]]></requesturi>
+			<message><![CDATA[Do insert failed :: Table 'malindih_java.bfe0r_jomres_site_settings' doesn't exist INSERT INTO #__jomres_site_settings (akey,value) VALUES ('update_time','1406351068')]]></message>
+	</errorlogentry>
+</errorlog>

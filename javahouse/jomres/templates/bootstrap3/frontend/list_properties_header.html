@@ -1,0 +1,36 @@
+<patTemplate:tmpl name="header_pageoutput" unusedvars="strip">
+	<div class="jomres-propertylist-toolbar well">
+		<div class="btn-toolbar">
+			<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+				{ORDER_DROPDOWN}
+			</div>
+			<div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
+				<div class="btn-group">
+					<button class="btn btn-default btn-xs">{COMMON_VIEW}</button>
+					<button class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+						<span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu">
+						<patTemplate:tmpl name="layout_rows" type="simpleCondition" requiredVars="title">
+							<li><a href="{LINK}">{TITLE}</a></li>
+						</patTemplate:tmpl>
+					</ul>
+				</div>
+				<patTemplate:tmpl name="budget_output" type="simpleCondition" requiredVars="budget_dropdown">
+					{BUDGET_DROPDOWN}
+				</patTemplate:tmpl>
+				<patTemplate:tmpl name="shortlist" type="simpleCondition" requiredVars="_jomres_viewshortlist">
+				<div class="btn-group">
+					<a href="{SHORTLISTLINK}" class="btn btn-default btn-xs">{_JOMRES_VIEWSHORTLIST}</a>
+				</div>
+				</patTemplate:tmpl>
+				<patTemplate:tmpl name="compare" type="simpleCondition" requiredVars="_jomres_compare">
+				<div class="btn-group">
+					{COMPARELINK}<a href="javascript:void(0);" onclick="return trigger_comparison(this);" class="btn btn-default btn-xs">{_JOMRES_COMPARE}</a> 
+					<form action=""><input type="hidden" id="comparison_ids" name="ids" value=""/></form>
+				</div>
+				</patTemplate:tmpl>
+			</div>
+		</div>
+	</div>
+</patTemplate:tmpl>
